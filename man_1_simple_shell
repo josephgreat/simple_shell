@@ -1,0 +1,93 @@
+.TH SIMPLE_SHELL 1 "21 October 2021" "1.0" "New Shell" 
+.SH NAME 
+.B New Shell 
+- Shell implementation of command line interpreter.
+.SH SYNOPSIS 
+.PP
+.B ./hsh
+.PP 
+.B command [- arguments]  
+.PP
+.B exit [ exit num ] 
+.PP 
+.B ls -l
+.PP 
+.B exit 78 
+
+.SH DESCRIPTION 
+New Shell is a command line interpreter of a traditional Unix-like command line interface.  The current version is 1.0.
+This man page is not intended to be a tutorial or a complete specification of the shell. 
+.PP
+.B Overview
+
+This shell reads lines from either a file or the terminal, interprets them, and executes commands.
+
+.PP
+
+.B Invocation
+
+Compile simple_shell with the GNU Compiler Collection, preferably using gcc plus the below specified flags, as per this example:
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+New shell can be run in interactive mode by entering the below command on the command line followd by "enter." Note that the prompt ('$') will appear and you will then be in interactive mode and able to enter commands followed by "enter." 
+.P
+.RS
+.B $ ./hsh
+.P
+.RE
+New shell can be run in non-interactive mode through the use of shell scripts. This can involve the use of piping ('|'):
+.P
+.RS
+.B echo 'ls' | ./hsh
+
+.SH EXECUTABLES
+
+Example of executables:
+.IP
+.br
+.\&
+.RS
+\&$ echo "Example of executables"
+.br
+\&"Example of executables"
+.br
+\&$
+
+
+.SH BUILTINS
+
+The following builtin commands are supported:
+
+.IT
+.B env
+- prints the environment variables
+
+.B exit
+- exits the program
+
+.B cd
+- change current directory
+.B exit
+
+.PP
+.B Command Exit Status
+
+Each command has an exit status that can influence the behaviour of other shell commands.  The paradigm is that a command exits with zero for normal or success, and non-zero for failure, error, or a false indication.
+
+.SH FORMAT 
+The format string is a character string, beginning and ending in its initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream 
+
+.SH BUGS
+No known bugs.
+Please report any issues to the authors.
+
+.SH AUTHORS
+
+Ojo Timilehin Joseph <1431@holbertonschool.com>
+Ifeoluwa Lawal <@holbertonschool.com>
+
+.SH SEE ALSO
+sh
